@@ -1,0 +1,139 @@
+* { /* <*> é o seletor universal, que seleciona todos os elementos do documento. */
+    box-sizing: border-box; /* <border-box> altera o modelo de caixa CSS para incluir o padding e a borda dentro da largura e altura totais do elemento; tornando mais fácil calcular o tamanho total do elemento. */
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body {
+    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
+    height: 100vh; /* <vh> significa “viewport height” (altura da viewport); 100vh representa 100% da altura da viewport; Útil para criar layouts que precisam ocupar toda a altura da tela,*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body::before { /* <::before> é um pseudo-elemento que insere algum conteúdo antes do conteúdo do elemento espedificado; */
+    background-image: url("img/code.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    content: ""; /* <content> necessário para criar o pseudo-elemento. Sem isso, o pseudo-elemento não será renderizado. */
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.container {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 24px;
+    border: 1px solid #1875E8;
+    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
+    background-image: url("img/Ruido.png");
+    background-size: 100% 100%;
+    position: relative;
+}
+
+
+.container__conteudo {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.container__informacoes {
+    flex: 1; /* <flex> é uma abreviação para três propriedades flexbox: flex-grow, flex-shrink e flex-basis; ideal para criar layouts que se ajustam dinamicamente ao tamanho da tela; e quando você quer que vários elementos ocupem igualmente o espaço disponível dentro de um contêiner flexível. */
+    padding: 3rem; /*  <rem> é uma unidade relativa ao tamanho da fonte raiz. */
+}
+
+.container__botao {
+    border-radius: 16px;
+    background: #1875E8;
+    padding: 16px 24px;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+    margin-top: 2rem; 
+}
+
+.container__texto {
+    margin: 16px 0 16px 0;
+}
+
+.container__texto-azul {
+    color: #1875E8;
+}
+
+.container__input {
+    width: 100%;
+    height: 72px;
+    border-radius: 16px;
+    background-color: #FFF;
+    border: none;
+    color: #1875E8;
+    padding: 2rem;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+
+.container__botoes {
+    display: flex;
+    gap: 2em; /* <gap> define um espaçamento entre os itens filhos do contêiner; <em> é uma  unidade relativa ao tamanho da fonte do elemento pai, proporcionando um espaçamento consistente e responsivo.*/ 
+}
+
+h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 72px;
+    padding-bottom: 3rem;
+}
+
+p,
+button {
+    font-family: 'Inter', sans-serif;
+}
+
+.texto__paragrafo {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+button:disabled {
+    background-color: gray;
+}
+
+@media screen and (max-width: 1250px) {
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .container__botao {
+        font-size: 16px;
+    }
+
+
+    .texto__paragrafo {
+        font-size: 24px;
+    }
+
+    .container__imagem-pessoa {
+        display: none;
+    }
+
+    .container__conteudo {
+        display: block;
+        position: inherit; /* <inherit> faz com que o elemento herde o valor da propriedade de seu elemento pai.*/ 
+    }
+
+    .container__informacoes {
+        padding: 1rem
+    }
+}
